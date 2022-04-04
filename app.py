@@ -8,7 +8,7 @@ def index():
     return render_template('index.html' , pageTitle='Flask Server Honme page')
 
 @app.route('/jin')
-def mike():
+def jin():
     return render_template('jin.html', pageTitle='ALL About Jin')
 
 if __name__ == '__main__':
