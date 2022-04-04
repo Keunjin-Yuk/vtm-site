@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html' , pageTitle='Flask Server Honme page')
 
-@app.route('/mike')
+@app.route('/jin')
 def mike():
     return render_template('jin.html', pageTitle='ALL About Jin')
 
