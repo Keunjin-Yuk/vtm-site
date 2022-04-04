@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 
-{% block title %} Welcome to the home page {% endblock %}
+{% block body %} Hello world! 
 
+    <h1>Estimation</h1>
+    <hr>
+    <p>Type Radius and Height:</p>
+    <form action="/estimate" method = "post">
+        
+        <input type="float" id="Radius" name="Radius" />
+        <input type="float" id="Height" name="Height" />
+    </form>
 
-{% block body %} Hello world! {% endblock %}
+{% endblock %}
