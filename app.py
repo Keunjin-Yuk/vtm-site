@@ -11,5 +11,10 @@ def index():
 def jin():
     return render_template('jin.html', pageTitle='ALL About Jin')
 
+@app.route('/estimate')
+def estimate():
+
+    return render_template('estimate.html', pageTitle='Estimation')
+
 if __name__ == '__main__':
     app.run(debug=True)
