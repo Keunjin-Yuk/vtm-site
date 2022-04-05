@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 
-{% block body %} Hello world! 
+{% block body %}
     
 <h1>Estimation</h1>
+
     <hr>
     <p>Type Radius and Height:</p>
     <form action="/estimate" method = "post">
-        
+        <label for="Radius">Radius:</label>
         <input type="float" id="Radius" name="Radius" />
+        <br />
+        <label for="Height">Height:</label>
         <input type="float" id="Height" name="Height" />
+        <br />
+        <input type="submit" id="Submit" value="Submit" />
     </form>
 
 {% endblock %}
