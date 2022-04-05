@@ -7,6 +7,15 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/stylesheet.css') }}">
 </head>
     <body>
+        <div id="menubar">
+            <nav>
+              <ul id="navlist">
+                <li> <a href="/"> Home </a> </li>
+                <li> <a href="about"> About </a> </li>
+                <li> <a href="estimate"> Estimate </a></li>
+              </ul>
+            </nav>
+          </div><!-- close the #menubar div -->
     {% block body %}
     {% endblock %}
 

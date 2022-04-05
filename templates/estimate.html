@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    
+<h1>Estimation</h1>
+    <body></body>
+    <p>Type Radius and Height:</p>
+    <form action="/estimate" method = "POST">
+        <label for="Radius">Radius:</label>
+        <input type="text" name="Radius" placeholder="Radius in inches"/>
+        <br />
+        <label for="Height">Height:</label>
+        <input type="text" name="Height" placeholder="Height in inches"/>
+        <br />
+        <button type="submit" value="Estimate">Estimate</button>
+    </form>
+    {%if Estimate%}
+    <p>Your Estimate is: $ {{Estimate}}</p>
+    {%endif%}
+    </body>
+{% endblock %}
