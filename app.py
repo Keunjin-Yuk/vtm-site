@@ -11,6 +11,27 @@ def index():
 def jin():
     return render_template('about.html', pageTitle='About VTM')
 
+def area(Radius,Height):
+    pi=3.14
+        
+    tanktoparea=pi*(Radius*Radius)
+
+    tanksidearea= 2*(pi*(Radius*Height))
+
+    totalarea= tanktoparea+tanksidearea
+
+    inchtosq= totalarea/144
+    return inchtosq
+
+def cost(inchtosq):
+    materialcost=25
+    totalmaterialcost=materialcost *inchtosq
+
+    laborcost=15
+    totallaborcost=laborcost * inchtosq
+    return totalmaterialcost + totallaborcost
+
+
 @app.route('/estimate', methods=['POST','GET'])
 def estimate():
     Estimate=''
@@ -18,28 +39,16 @@ def estimate():
         form=request.form
         Radius = float(form['Radius'])
         Height = float(form['Height'])
-        pi=3.14
         
-        tanktoparea=pi*(Radius*Radius)
 
-        tanksidearea= 2*(pi*(Radius*Height))
+        inchtosq=area(Radius,Height)
 
-        totalarea= tanktoparea+tanksidearea
-
-        inchtosq= totalarea/144
-
-        materialcost=25
-        totalmaterialcost=materialcost*inchtosq
-
-        laborcost=15
-        totallaborcost=laborcost*inchtosq
-
-        Estimate = totalmaterialcost + totallaborcost
+        estimate_cost=cost(inchtosq)
 
         #return redirect(url_for('index'))
-        return render_template('estimate.html', pageTitle='Estimation',Estimate=Estimate) 
+        return render_template('estimate.html', pageTitle='Estimation',Estimate=estimate_cost) 
     #return redirect(url_for('estimate'))
-    return render_template('estimate.html', pageTitle='Estimation',Estimate=Estimate)
+    return render_template('estimate.html', pageTitle='Estimation')
 
 if __name__ == '__main__':
     app.run(debug=True)
