@@ -34,7 +34,7 @@ def test_estimate_route(app, client):
     WHEN the '/age' route is requested (GET)
     THEN check that the correct page is displayed
     """
-    print("-- /age GET test")
+    print("-- /estimate GET test")
     with app.test_client() as test_client:
         res = test_client.get('/estimate')
         assert res.status_code == 200
